@@ -1,0 +1,2625 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../online/">
+      
+      
+        <link rel="next" href="../analysis/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>finlab.plot - Package 程式文檔</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/material.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#finlabplot" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="https://ai.finlab.tw" title="Package 程式文檔" class="md-header__button md-logo" aria-label="Package 程式文檔" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Package 程式文檔
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              finlab.plot
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="白天模式"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="白天模式" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="夜晚模式"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="夜晚模式" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/finlab-python" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../getting-start/" class="md-tabs__link">
+      三分鐘上手
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../details/get_data/" class="md-tabs__link">
+        簡易教學
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../finlab/" class="md-tabs__link md-tabs__link--active">
+        詳細功能
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tools/guide_for_beginners/" class="md-tabs__link">
+        實用範例
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../cli/" class="md-tabs__link">
+      CLI
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../change-log/" class="md-tabs__link">
+      更新日誌
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../faq/" class="md-tabs__link">
+      常見問題 FAQ
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://ai.finlab.tw" title="Package 程式文檔" class="md-nav__button md-logo" aria-label="Package 程式文檔" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    Package 程式文檔
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/finlab-python" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-start/" class="md-nav__link">
+        三分鐘上手
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          簡易教學
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          簡易教學
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/get_data/" class="md-nav__link">
+        數據
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/tech_ind/" class="md-nav__link">
+        指標
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/backtest_decorator/" class="md-nav__link">
+        選股條件
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/backtest/" class="md-nav__link">
+        歷史回測
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/order_api/" class="md-nav__link">
+        下單(舊版)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/order_api2/" class="md-nav__link">
+        下單(新版-BETA)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/machine_learning/" class="md-nav__link">
+        機器學習
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../details/finlab_plot/" class="md-nav__link">
+        資料視覺化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          詳細功能
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          詳細功能
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finlab/" class="md-nav__link">
+        finlab
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        finlab.data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataframe/" class="md-nav__link">
+        finlab.dataframe
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest/" class="md-nav__link">
+        finlab.backtest
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../report/" class="md-nav__link">
+        finlab.report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machine_learning/" class="md-nav__link">
+        finlab.ml
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portfolio/" class="md-nav__link">
+        finlab.portfolio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../online/" class="md-nav__link">
+        finlab.online
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          finlab.plot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        finlab.plot
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.plot_tw_stock_candles" class="md-nav__link">
+    plot_tw_stock_candles()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.create_treemap_data" class="md-nav__link">
+    create_treemap_data()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.plot_tw_stock_treemap" class="md-nav__link">
+    plot_tw_stock_treemap()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.plot_tw_stock_radar" class="md-nav__link">
+    plot_tw_stock_radar()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.plot_tw_stock_river" class="md-nav__link">
+    plot_tw_stock_river()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.StrategySunburst" class="md-nav__link">
+    StrategySunburst
+  </a>
+  
+    <nav class="md-nav" aria-label="StrategySunburst">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategySunburst.get_strategy_df" class="md-nav__link">
+    get_strategy_df()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategySunburst.plot" class="md-nav__link">
+    plot()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.StrategyReturnStats" class="md-nav__link">
+    StrategyReturnStats
+  </a>
+  
+    <nav class="md-nav" aria-label="StrategyReturnStats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategyReturnStats.get_benchmark_return" class="md-nav__link">
+    get_benchmark_return()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategyReturnStats.plot_strategy_creturn" class="md-nav__link">
+    plot_strategy_creturn()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategyReturnStats.plot_strategy_last_return" class="md-nav__link">
+    plot_strategy_last_return()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analysis/" class="md-nav__link">
+        finlab.analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimize/" class="md-nav__link">
+        finlab.optimize
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        finlab.tools
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../market_info/" class="md-nav__link">
+        finlab.market_info
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          實用範例
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          實用範例
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          台股
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          台股
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/guide_for_beginners/" class="md-nav__link">
+        策略開發10分鐘上手
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/Pandas_%E7%AD%96%E7%95%A5%E9%96%8B%E7%99%BC%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/" class="md-nav__link">
+        Pandas 策略開發基礎語法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E8%82%A1%E5%83%B9%E5%89%B5%E6%96%B0%E9%AB%98%E5%8B%95%E8%83%BD/" class="md-nav__link">
+        股價創新高動能
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%E9%81%B8%E8%82%A1/" class="md-nav__link">
+        技術指標選股
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E4%B9%96%E9%9B%A2%E7%8E%87%E5%92%8C%E8%B2%A1%E5%A0%B1%E6%BF%BE%E7%B6%B2/" class="md-nav__link">
+        乖離率和財報濾網
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E6%9C%AC%E7%9B%8A%E6%88%90%E9%95%B7%E6%AF%94/" class="md-nav__link">
+        本益成長比(月營收截止日換股)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E5%B0%8F%E8%B3%87%E6%97%8F%E5%84%AA%E7%AD%89%E7%94%9F/" class="md-nav__link">
+        小資族優等生
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E5%A4%9A%E7%A9%BA%E5%B0%8D%E6%B2%96/" class="md-nav__link">
+        多空對沖
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E7%87%9F%E5%BB%BA%E7%94%A2%E6%A5%AD%E5%B0%88%E7%94%A8%E6%8C%87%E6%A8%99/" class="md-nav__link">
+        營建產業專用指標
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E9%81%8E%E6%BF%BE%E5%85%A8%E9%A1%8D%E4%BA%A4%E5%89%B2%E8%82%A1/" class="md-nav__link">
+        過濾全額交割股
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E9%81%8E%E6%BF%BEKY%E8%82%A1%E8%B2%A1%E5%A0%B1/" class="md-nav__link">
+        過濾KY股財報
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E5%A4%A7%E7%9B%A4%E6%8C%87%E6%A8%99%E6%BF%BE%E7%B6%B2/" class="md-nav__link">
+        大盤指標濾網
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/2330_bband_rebound/" class="md-nav__link">
+        台積電逆勢抄底
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/cheap-stock-ratio/" class="md-nav__link">
+        大跌底部判斷
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/important_info_search/" class="md-nav__link">
+        重訊公告搜尋 - 業外損失
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/ml_example/" class="md-nav__link">
+        機器學習範例策略
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli/" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../change-log/" class="md-nav__link">
+        更新日誌
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        常見問題 FAQ
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.plot_tw_stock_candles" class="md-nav__link">
+    plot_tw_stock_candles()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.create_treemap_data" class="md-nav__link">
+    create_treemap_data()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.plot_tw_stock_treemap" class="md-nav__link">
+    plot_tw_stock_treemap()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.plot_tw_stock_radar" class="md-nav__link">
+    plot_tw_stock_radar()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.plot_tw_stock_river" class="md-nav__link">
+    plot_tw_stock_river()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.StrategySunburst" class="md-nav__link">
+    StrategySunburst
+  </a>
+  
+    <nav class="md-nav" aria-label="StrategySunburst">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategySunburst.get_strategy_df" class="md-nav__link">
+    get_strategy_df()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategySunburst.plot" class="md-nav__link">
+    plot()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlab.plot.StrategyReturnStats" class="md-nav__link">
+    StrategyReturnStats
+  </a>
+  
+    <nav class="md-nav" aria-label="StrategyReturnStats">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategyReturnStats.get_benchmark_return" class="md-nav__link">
+    get_benchmark_return()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategyReturnStats.plot_strategy_creturn" class="md-nav__link">
+    plot_strategy_creturn()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finlab.plot.StrategyReturnStats.plot_strategy_last_return" class="md-nav__link">
+    plot_strategy_last_return()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="finlabplot">finlab.plot</h1>
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="finlab.plot.plot_tw_stock_candles" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">finlab.plot.plot_tw_stock_candles</span>
+
+
+</h2>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot_tw_stock_candles</span><span class="p">(</span><span class="n">stock_id</span><span class="p">,</span> <span class="n">recent_days</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">adjust_price</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">resample</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">overlay_func</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">technical_func</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents first">
+  
+      <p>繪製台股技術線圖圖組
+Args:
+    stock_id (str): 台股股號，ex:<code>'2330'</code>。
+    recent_days (int):取近n個交易日資料。
+    adjust_price (bool):是否使用還原股價計算。
+    resample (str): 技術指標價格週期，ex: <code>D</code> 代表日線, <code>W</code> 代表週線, <code>M</code> 代表月線。
+    overlay_func (dict):
+        K線圖輔助線，預設使用布林通道。
+         <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">finlab.data</span> <span class="kn">import</span> <span class="n">indicator</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">overlay_func</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>             <span class="s1">&#39;ema_5&#39;</span><span class="p">:</span><span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;EMA&#39;</span><span class="p">,</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>             <span class="s1">&#39;ema_10&#39;</span><span class="p">:</span><span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;EMA&#39;</span><span class="p">,</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>             <span class="s1">&#39;ema_20&#39;</span><span class="p">:</span><span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;EMA&#39;</span><span class="p">,</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>             <span class="s1">&#39;ema_60&#39;</span><span class="p">:</span><span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;EMA&#39;</span><span class="p">,</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">60</span><span class="p">),</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            <span class="p">}</span>
+</code></pre></div>
+    technical_func (list):
+        技術指標子圖，預設使用KD技術指標單組子圖。</p>
+<div class="highlight"><pre><span></span><code>    設定多組技術指標：
+    ```py
+    from finlab.data import indicator
+
+    k,d = indicator(&#39;STOCH&#39;)
+    rsi = indicator(&#39;RSI&#39;)
+    technical_func = [{&#39;K&#39;:k,&#39;D&#39;:d},{&#39;RSI&#39;:rsi}]
+    ```
+</code></pre></div>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>RETURNS</b></th>
+        <th><b>DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+              <span class="doc-returns-annotation">
+                  <code><span title="plotly.graph_objects.Figure">Figure</span></code>
+              </span>
+          </td>
+          <td class="doc-returns-details">
+            <div class="doc-md-description">
+              <p>技術線圖</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+<p><strong>Examples:</strong></p>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">finlab.plot</span> <span class="kn">import</span> <span class="n">plot_tw_stock_candles</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">finlab.data</span> <span class="kn">import</span> <span class="n">indicator</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">overlay_func</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>              <span class="s1">&#39;ema_5&#39;</span><span class="p">:</span><span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;EMA&#39;</span><span class="p">,</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>              <span class="s1">&#39;ema_10&#39;</span><span class="p">:</span><span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;EMA&#39;</span><span class="p">,</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>              <span class="s1">&#39;ema_20&#39;</span><span class="p">:</span><span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;EMA&#39;</span><span class="p">,</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">20</span><span class="p">),</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>              <span class="s1">&#39;ema_60&#39;</span><span class="p">:</span><span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;EMA&#39;</span><span class="p">,</span><span class="n">timeperiod</span><span class="o">=</span><span class="mi">60</span><span class="p">),</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>             <span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">k</span><span class="p">,</span><span class="n">d</span> <span class="o">=</span> <span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;STOCH&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">rsi</span> <span class="o">=</span> <span class="n">indicator</span><span class="p">(</span><span class="s1">&#39;RSI&#39;</span><span class="p">)</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">technical_func</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;K&#39;</span><span class="p">:</span><span class="n">k</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">:</span><span class="n">d</span><span class="p">},{</span><span class="s1">&#39;RSI&#39;</span><span class="p">:</span><span class="n">rsi</span><span class="p">}]</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">plot_tw_stock_candles</span><span class="p">(</span><span class="n">stock_id</span><span class="o">=</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span><span class="n">recent_days</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span><span class="n">adjust_price</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">overlay_func</span><span class="o">=</span><span class="n">overlay_func</span><span class="p">,</span><span class="n">technical_func</span><span class="o">=</span><span class="n">technical_func</span><span class="p">)</span>
+</code></pre></div>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="finlab.plot.create_treemap_data" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">finlab.plot.create_treemap_data</span>
+
+
+</h2>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">create_treemap_data</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="s1">&#39;return_ratio&#39;</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents first">
+  
+      <p>產生台股板塊圖資料</p>
+<p>產生繪製樹狀圖所用的資料，可再外加FinLab資料庫以外的指標製作客製化DataFrame，
+並傳入<code>plot_tw_stock_treemap(treemap_data=treemap_data)。</code></p>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>PARAMETER</b></th>
+        <th><b> DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>start</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>資料開始日，ex:<code>"2021-01-02"</code>。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>end</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>資料結束日，ex:<code>"2021-01-05"</code>。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>item</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>決定板塊顏色深淺的指標。
+          除了可選擇依照 start 與 end 計算的<code>"return_ratio"</code>(報酬率)，
+          亦可選擇<a href="https://ai.finlab.tw/database">FinLab資料庫</a>內的指標顯示近一期資料。
+  example:</p>
+<ul>
+<li><code>'price_earning_ratio:本益比'</code> - 顯示近日產業的本益比高低。</li>
+<li><code>'monthly_revenue:去年同月增減(%)'</code> - 顯示近月的單月營收年增率。</li>
+</ul>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>&#39;return_ratio&#39;</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>clip</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>將item邊界外的值分配給邊界值，防止資料上限值過大或過小，造成顏色深淺變化不明顯。
+            ex:(0,100)，將數值低高界線，設為0~100，超過的數值。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>參考<a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.clip.html">pandas文件</a>更了解<code>pd.clip</code>細節。</p>
+</div>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>tuple</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>RETURNS</b></th>
+        <th><b>DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+              <span class="doc-returns-annotation">
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+              </span>
+          </td>
+          <td class="doc-returns-details">
+            <div class="doc-md-description">
+              <p>台股個股指標</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Examples:</p>
+<div class="highlight"><pre><span></span><code>欲下載所有上市上櫃之價量歷史資料與產業分類，只需執行此函式:
+
+``` py
+from finlab.plot import create_treemap_data
+create_treemap_data(start= &#39;2021-07-01&#39;,end = &#39;2021-07-02&#39;)
+```
+
+| stock_id   |  close |turnover|category|market|market_value|return_ratio|country|
+|:-----------|-------:|-------:|-------:|-------:|-------:|-------:|-------:|
+| 1101       |   20 |  57.85 |  水泥工業 |  sii   |    111  |    0.1  |  TW-Stock|
+| 1102       |  20 |  58.1  |  水泥工業 |  sii    |    111  |    -0.1 |  TW-Stock|
+</code></pre></div>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="finlab.plot.plot_tw_stock_treemap" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">finlab.plot.plot_tw_stock_treemap</span>
+
+
+</h2>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot_tw_stock_treemap</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">area_ind</span><span class="o">=</span><span class="s1">&#39;market_value&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="s1">&#39;return_ratio&#39;</span><span class="p">,</span> <span class="n">clip</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;Temps&#39;</span><span class="p">,</span> <span class="n">treemap_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents first">
+  
+      <p>繪製台股板塊圖資料</p>
+<p>巢狀樹狀圖可以顯示多維度資料，將依照產業分類的台股資料絢麗顯示。</p>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>PARAMETER</b></th>
+        <th><b> DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>start</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>資料開始日，ex:<code>'2021-01-02'</code>。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>end</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>資料結束日，ex:<code>'2021-01-05'</code>。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>area_ind</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>決定板塊面積數值的指標。
+              可選擇<code>["market_value","turnover"]</code>，數值代表含義分別為市值、成交金額。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>&#39;market_value&#39;</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>item</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>決定板塊顏色深淺的指標。
+          除了可選擇依照 start 與 end 計算的<code>"return_ratio"</code>(報酬率)，
+          亦可選擇<a href="https://ai.finlab.tw/database">FinLab資料庫</a>內的指標顯示近一期資料。
+  example:</p>
+<ul>
+<li><code>'price_earning_ratio:本益比'</code> - 顯示近日產業的本益比高低。</li>
+<li><code>'monthly_revenue:去年同月增減(%)'</code> - 顯示近月的單月營收年增率。</li>
+</ul>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>&#39;return_ratio&#39;</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>clip</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>將 item 邊界外的值分配給邊界值，防止資料上限值過大或過小，造成顏色深淺變化不明顯。
+            ex:(0,100)，將數值低高界線，設為 0~100，超過的數值。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>參考<a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.clip.html">pandas文件</a>更了解<code>pd.clip</code>細節。</p>
+</div>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>tuple</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>color_continuous_scale</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p><a href="https://plotly.com/python/builtin-colorscales/">顏色變化序列的樣式名稱</a></p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>&#39;Temps&#39;</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>treemap_data</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>客製化資料，格式參照 <code>create_treemap_data()</code> 返回值。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code><span title="pandas.DataFrame">DataFrame</span></code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Returns:
+    (plotly.graph_objects.Figure): 樹狀板塊圖
+Examples:
+    ex1:
+    板塊面積顯示成交金額，顏色顯示'2021-07-01'～'2021-07-02'的報酬率變化，可以觀察市場資金集中的產業與漲跌強弱。
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">finlab.plot</span> <span class="kn">import</span> <span class="n">plot_tw_stock_treemap</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">plot_tw_stock_treemap</span><span class="p">(</span><span class="n">start</span><span class="o">=</span> <span class="s1">&#39;2021-07-01&#39;</span><span class="p">,</span><span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;2021-07-02&#39;</span><span class="p">,</span><span class="n">area_ind</span><span class="o">=</span><span class="s2">&quot;turnover&quot;</span><span class="p">,</span><span class="n">item</span><span class="o">=</span><span class="s2">&quot;return_ratio&quot;</span><span class="p">)</span>
+</code></pre></div>
+    <img alt="成交佔比/報酬率板塊圖" src="../img/plot/treemap_return.png" />
+    ex2:
+    板塊面積顯示市值(股本*收盤價)，顏色顯示近期本益比，可以觀察全市場哪些是權值股？哪些產業本益比評價高？限制數值範圍在(0,50)，
+    將過高本益比的數值壓在50，不讓顏色變化突兀，能分出高低階層即可。
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">finlab.plot</span> <span class="kn">import</span> <span class="n">plot_tw_stock_treemap</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">plot_tw_stock_treemap</span><span class="p">(</span><span class="n">area_ind</span><span class="o">=</span><span class="s2">&quot;market_value&quot;</span><span class="p">,</span><span class="n">item</span><span class="o">=</span><span class="s2">&quot;price_earning_ratio:本益比&quot;</span><span class="p">,</span><span class="n">clip</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+</code></pre></div>
+    <img alt="市值/本益比板塊圖" src="../img/plot/treemap_pe.png" /></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="finlab.plot.plot_tw_stock_radar" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">finlab.plot.plot_tw_stock_radar</span>
+
+
+</h2>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot_tw_stock_radar</span><span class="p">(</span><span class="n">portfolio</span><span class="p">,</span> <span class="n">feats</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;line_polar&#39;</span><span class="p">,</span> <span class="n">line_polar_fill</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">period</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cut_bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">custom_data</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents first">
+  
+      <p>繪製台股雷達圖</p>
+<p>比較持股組合的指標分級特性。若數值為nan，則不顯示分級。</p>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>PARAMETER</b></th>
+        <th><b> DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>portfolio</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>持股組合，ex:<code>['1101','1102']</code>。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>list</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>feats</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>選定FinLab資料庫內的指標組成資料集。預設為18項財務指標。
+            ex:['fundamental_features:營業毛利率','fundamental_features:營業利益率']</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>list</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>mode</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>雷達圖模式 ，ex:'bar_polar','scatter_polar','line_polar'`。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>參考<a href="https://plotly.com/python-api-reference/generated/plotly.express.html">不同模式的差異</a></p>
+</div>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>&#39;line_polar&#39;</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>line_polar_fill</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>將區域設置為用純色填充 。ex:<code>None,'toself','tonext'</code>
+                   <code>'toself'</code>將跡線的端點（或跡線的每一段，如果它有間隙）連接成一個封閉的形狀。
+                   如果一條完全包圍另一條（例如連續的等高線），則<code>'tonext'</code>填充兩條跡線之間的空間，如果之前沒有跡線，
+                   則其行為類似於<code>'toself'</code>。如果一條跡線不包含另一條跡線，則不應使用<code>'tonext'</code>。
+欲使用 line_polar，請將pandas版本降至 1.4.4。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>參考<a href="https://plotly.github.io/plotly.py-docs/generated/plotly.graph_objects.Scatterpolar.html">plotly.graph_objects.Scatterpolar.fill</a></p>
+</div>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>period</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>選擇第幾期的特徵資料，預設為近一季。
+            ex: 設定數值為'2020-Q2，取得2020年第二季資料比較。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>cut_bins</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>特徵分級級距。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>int</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>10</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>title</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>圖片標題名稱。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>custom_data</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>客製化指標分級，欄名為特徵
+            格式範例:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">stock_id</th>
+<th style="text-align: right;">營業毛利率</th>
+<th style="text-align: right;">營業利益率</th>
+<th style="text-align: right;">稅後淨利率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1101</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">1102</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">4</td>
+</tr>
+</tbody>
+</table>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code><span title="pandas.DataFrame">DataFrame</span></code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Returns:
+    (plotly.graph_objects.Figure): 雷達圖
+Examples:
+    ex1:比較持股組合累計分數，看持股組合偏重哪像特徵。
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">finlab.plot</span> <span class="kn">import</span> <span class="n">plot_tw_stock_radar</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">plot_tw_stock_radar</span><span class="p">(</span><span class="n">portfolio</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;1101&quot;</span><span class="p">,</span> <span class="s2">&quot;2330&quot;</span><span class="p">,</span> <span class="s2">&quot;8942&quot;</span><span class="p">,</span> <span class="s2">&quot;6263&quot;</span><span class="p">],</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;bar_polar&quot;</span><span class="p">,</span> <span class="n">line_polar_fill</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">)</span>
+</code></pre></div>
+    <img alt="持股組合雷達圖" src="../img/plot/radar_many.png" />
+    ex2:看單一個股特徵分級落點。
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">finlab.plot</span> <span class="kn">import</span> <span class="n">plot_tw_stock_radar</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">feats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fundamental_features:營業毛利率&#39;</span><span class="p">,</span> <span class="s1">&#39;fundamental_features:營業利益率&#39;</span><span class="p">,</span> <span class="s1">&#39;fundamental_features:稅後淨利率&#39;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>         <span class="s1">&#39;fundamental_features:現金流量比率&#39;</span><span class="p">,</span> <span class="s1">&#39;fundamental_features:負債比率&#39;</span><span class="p">]</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">plot_tw_stock_radar</span><span class="p">(</span><span class="n">portfolio</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;9939&quot;</span><span class="p">],</span> <span class="n">feats</span><span class="o">=</span><span class="n">feats</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;line_polar&quot;</span><span class="p">,</span> <span class="n">line_polar_fill</span><span class="o">=</span><span class="s1">&#39;toself&#39;</span><span class="p">,</span> <span class="n">cut_bins</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div>
+    <img alt="單檔標的子選指標雷達圖" src="../img/plot/radar_single.png" /></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h2 id="finlab.plot.plot_tw_stock_river" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">finlab.plot.plot_tw_stock_river</span>
+
+
+</h2>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot_tw_stock_river</span><span class="p">(</span><span class="n">stock_id</span><span class="o">=</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;pe&#39;</span><span class="p">,</span> <span class="n">split_range</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents first">
+  
+      <p>繪製台股河流圖</p>
+<p>使用 PE or PB 的最高與最低值繪製河流圖，判斷指標所處位階。</p>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>PARAMETER</b></th>
+        <th><b> DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>stock_id</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>台股股號，ex:<code>'2330'</code>。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>&#39;2330&#39;</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>start</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>資料開始日，ex:<code>'2020-01-02'</code>。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>end</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>資料結束日，ex:<code>'2022-01-05'</code>。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>mode</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p><code>'pe'</code> or <code>'pb'</code> (本益比或股價淨值比)。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>&#39;pe&#39;</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>split_range</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>河流階層數。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>int</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>8</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Returns:
+    (plotly.graph_objects.Figure): 河流圖
+Examples:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">finlab.plot</span> <span class="kn">import</span> <span class="n">plot_tw_stock_river</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">plot_tw_stock_river</span><span class="p">(</span><span class="n">stock_id</span><span class="o">=</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2015-1-1&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2022-7-1&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;pe&#39;</span><span class="p">,</span> <span class="n">split_range</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+  <img alt="單檔標的子選指標雷達圖" src="../img/plot/pe_river.png" /></p>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="finlab.plot.StrategySunburst" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">finlab.plot.StrategySunburst</span>
+
+
+</h2>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">StrategySunburst</span><span class="p">()</span>
+</code></pre></div>
+
+  <div class="doc doc-contents first">
+
+  
+      <p>繪製策略部位旭日圖</p>
+<p>監控多策略。</p>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="finlab.plot.StrategySunburst.get_strategy_df" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_strategy_df</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_strategy_df</span><span class="p">(</span><span class="n">select_strategy</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>獲取策略部位與分配權重後計算的資料</p>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>PARAMETER</b></th>
+        <th><b> DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>select_strategy</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>選擇策略名稱並設定權重，預設是抓取權策略並平分資金比例到各策略。
+                     ex:<code>{'低波動本益成長比':0.5,'研發魔人':0.2, '現金':0.2}</code></p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>dict</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Returns:
+    (pd.DataFrame): strategies data</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="finlab.plot.StrategySunburst.plot" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">plot</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot</span><span class="p">(</span><span class="n">select_strategy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>繪圖</p>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>PARAMETER</b></th>
+        <th><b> DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>select_strategy</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>選擇策略名稱並設定權重，預設是抓取權策略並平分資金比例到各策略。
+                     ex:<code>{'低波動本益成長比':0.5,'研發魔人':0.2, '現金':0.2}</code></p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>dict</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>path</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>旭日圖由裡到外的顯示路徑，預設為<code>['s_name', 'market', 'category', 'stock_id']</code>。
+           <code>['market', 'category','stock_id','s_name']</code>也是常用選項。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>list</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>color_continuous_scale</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p><a href="https://plotly.com/python/builtin-colorscales/">顏色變化序列的樣式名稱</a></p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>&#39;RdBu_r&#39;</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>RETURNS</b></th>
+        <th><b>DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td>
+              <span class="doc-returns-annotation">
+                  <code><span title="plotly.graph_objects.Figure">Figure</span></code>
+              </span>
+          </td>
+          <td class="doc-returns-details">
+            <div class="doc-md-description">
+              <p>策略部位旭日圖</p>
+            </div>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Examples:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">finlab.plot</span> <span class="kn">import</span> <span class="n">StrategySunburst</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 實例化物件</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">strategies</span> <span class="o">=</span> <span class="n">StrategySunburst</span><span class="p">()</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">strategies</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">strategies</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">select_strategy</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;高殖利率烏龜&#39;</span><span class="p">:</span><span class="mf">0.4</span><span class="p">,</span><span class="s1">&#39;營收強勢動能瘋狗&#39;</span><span class="p">:</span><span class="mf">0.25</span><span class="p">,</span><span class="s1">&#39;低波動本益成長比&#39;</span><span class="p">:</span><span class="mf">0.2</span><span class="p">,</span><span class="s1">&#39;現金&#39;</span><span class="p">:</span><span class="mf">0.15</span><span class="p">},</span><span class="n">path</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;market&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">,</span><span class="s1">&#39;stock_id&#39;</span><span class="p">,</span><span class="s1">&#39;s_name&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+ex1:策略選到哪些標的?
+<img alt="市值/本益比板塊圖" src="../img/plot/sunburst1.png" /></p>
+<p>ex2:部位被哪些策略選到，標的若被不同策略選到，可能有獨特之處喔！
+<img alt="市值/本益比板塊圖" src="../img/plot/sunburst2.png" /></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+
+<h2 id="finlab.plot.StrategyReturnStats" class="doc doc-heading">
+          <span class="doc doc-object-name doc-class-name">finlab.plot.StrategyReturnStats</span>
+
+
+</h2>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">StrategyReturnStats</span><span class="p">(</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">,</span> <span class="n">strategy_names</span><span class="o">=</span><span class="p">[],</span> <span class="n">benchmark_return</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</code></pre></div>
+
+  <div class="doc doc-contents first">
+
+  
+      <p>繪製策略報酬率統計比較圖</p>
+<p>監控策略群體相對對標指數的表現。</p>
+
+
+
+  <table>
+    <thead>
+      <tr>
+        <th><b>PARAMETER</b></th>
+        <th><b> DESCRIPTION</b></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>start_date</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>報酬率計算開始日</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>end_date</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>報酬率計算結束日</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>str</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>strategy_names</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>用戶本人的策略集設定，填入欲納入統計的策略名稱，只限定自己的策略。ex:<code>['膽小貓','三頻率RSI策略', '二次創高股票',...]</code>，預設為全部已上傳的策略。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code>list</code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>[]</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td><code>benchmark_return</code></td>
+          <td class="doc-param-details">
+            <div class="doc-md-description">
+              <p>策略比對基準序列，預設為台股加權報酬指數。</p>
+            </div>
+            <p>
+                <span class="doc-param-annotation">
+                  <b>TYPE:</b>
+                    <code><span title="pandas.Series">Series</span></code>
+                </span>
+                <span class="doc-param-default">
+                  <b>DEFAULT:</b> 
+                    <code>None</code>
+                </span>
+            </p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>Examples:</p>
+<div class="highlight"><pre><span></span><code>統計2022-12-31~2023-07-31的報酬率數據
+``` py
+# 回測起始時間
+start_date = &#39;2022-12-31&#39;
+end_date  = &#39;2023-07-31&#39;
+
+# 選定策略範圍
+strategy_names = [&#39;膽小貓&#39;,&#39;三頻率RSI策略&#39;, &#39;二次創高股票&#39;, &#39;低波動本益成長比&#39;, &#39;合約負債建築工&#39;, &#39;多產業價投&#39;, &#39;小蝦米跟大鯨魚&#39;, &#39;小資族資優生策略&#39;, &#39;本益成長比&#39;, &#39;營收股價雙渦輪&#39;, &#39;現金流價值成長&#39;, &#39;研發魔人&#39;, &#39;股價淨值比策略&#39;, &#39;藏獒&#39;, &#39;高殖利率烏龜&#39;,&#39;監獄兔&#39;, &#39;財報指標20大&#39;]
+
+report = StrategyReturnStats(start_date ,end_date, strategy_names)
+# 繪製策略報酬率近期報酬率長條圖
+report.plot_strategy_last_return().show()
+# 繪製策略累積報酬率時間序列
+report.plot_strategy_creturn().show()
+```
+</code></pre></div>
+
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="finlab.plot.StrategyReturnStats.get_benchmark_return" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">get_benchmark_return</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_benchmark_return</span><span class="p">()</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>設定對標指數
+Returns:
+    (pandas.Series): 對標指數時間序列</p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="finlab.plot.StrategyReturnStats.plot_strategy_creturn" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">plot_strategy_creturn</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot_strategy_creturn</span><span class="p">()</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>繪製策略累積報酬率時間序列
+Returns:
+    (plotly.graph_objects.Figure): 圖表物件
+<img alt="繪製策略累積報酬率時間序列" src="../img/plot/finlab_strategy_creturn.png" /></p>
+
+  </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+
+
+<h3 id="finlab.plot.StrategyReturnStats.plot_strategy_last_return" class="doc doc-heading">
+          <span class="doc doc-object-name doc-function-name">plot_strategy_last_return</span>
+
+
+</h3>
+<div class="doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">plot_strategy_last_return</span><span class="p">()</span>
+</code></pre></div>
+
+  <div class="doc doc-contents ">
+  
+      <p>繪製策略報酬率近期報酬率長條圖
+Returns:
+    (plotly.graph_objects.Figure): 圖表物件
+<img alt="繪製策略報酬率近期報酬率長條圖" src="../img/plot/finlab_strategy_performance.png" /></p>
+
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+    
+  </body>
+</html>
