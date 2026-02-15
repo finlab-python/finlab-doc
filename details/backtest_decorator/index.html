@@ -1,0 +1,3620 @@
+
+<!doctype html>
+<html lang="zh-TW" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="FinLab - 台股量化交易工具，用最少程式碼完成策略研究、回測分析與實盤下單。支援技術指標、財報分析、機器學習與多策略組合管理。">
+      
+      
+      
+        <link rel="canonical" href="https://doc.finlab.tw/details/backtest_decorator/">
+      
+      
+        <link rel="prev" href="../tech_ind/">
+      
+      
+        <link rel="next" href="../backtest/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>選股條件 - FinLab 量化交易工具文檔</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/material.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-XXXXXXXXXX"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-XXXXXXXXXX",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  
+<meta property="og:type" content="website" />
+<meta property="og:title" content="選股條件 - FinLab 量化交易工具文檔" />
+<meta property="og:description" content="FinLab - 台股量化交易工具，用最少程式碼完成策略研究、回測分析與實盤下單。支援技術指標、財報分析、機器學習與多策略組合管理。" />
+<meta property="og:image" content="https://doc.finlab.tw/assets/images/social/details/backtest_decorator.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content="https://doc.finlab.tw/details/backtest_decorator/" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="選股條件 - FinLab 量化交易工具文檔" />
+<meta property="twitter:description" content="FinLab - 台股量化交易工具，用最少程式碼完成策略研究、回測分析與實盤下單。支援技術指標、財報分析、機器學習與多策略組合管理。" />
+<meta property="twitter:image" content="https://doc.finlab.tw/assets/images/social/details/backtest_decorator.png" />
+</head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳轉到
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="頁首">
+    <a href="https://ai.finlab.tw" title="FinLab 量化交易工具文檔" class="md-header__button md-logo" aria-label="FinLab 量化交易工具文檔" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FinLab 量化交易工具文檔
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              選股條件
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜尋" placeholder="搜尋" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="搜尋">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清除" aria-label="清除" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜尋引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/finlab-python" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="標籤" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  三分鐘上手
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../get_data/" class="md-tabs__link">
+          
+  
+  
+  簡易教學
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/finlab/" class="md-tabs__link">
+          
+  
+  
+  詳細功能
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../workflows/complete_strategy_workflow/" class="md-tabs__link">
+          
+  
+  
+  完整工作流程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../architecture/module_relationships/" class="md-tabs__link">
+          
+  
+  
+  架構與設計
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tools/guide_for_beginners/" class="md-tabs__link">
+          
+  
+  
+  實用範例
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../change-log/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  更新日誌
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  常見問題 FAQ
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  術語表
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://discord.gg/tAr4ysPqvR" class="md-tabs__link">
+        
+  
+  
+    
+  
+  社群助教
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ai.finlab.tw/pricing" class="md-tabs__link">
+        
+  
+  
+    
+  
+  價格
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="導覽列" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://ai.finlab.tw" title="FinLab 量化交易工具文檔" class="md-nav__button md-logo" aria-label="FinLab 量化交易工具文檔" data-md-component="logo">
+      
+  <img src="../../logo.png" alt="logo">
+
+    </a>
+    FinLab 量化交易工具文檔
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/finlab-python" title="前往倉庫" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    三分鐘上手
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    簡易教學
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    簡易教學
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../get_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    數據
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tech_ind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指標
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    選股條件
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    選股條件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速索引
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pandas-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        與 Pandas DataFrame 的差異
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlabdataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        創建 FinlabDataFrame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        運算符號
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        選股函式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="選股函式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#averagen-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        average(n) - 移動平均
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_largestn-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_largest(n) - 數值最大股票
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_smallestn-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_smallest(n) - 數值最小股票
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hold_until" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        訊號進出場(hold_until)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="訊號進出場(hold_until)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        進階參數
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整策略範例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        數值變化趨勢
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="數值變化趨勢">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risen-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rise(n) - 數值上升中
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falln-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fall(n) - 數值下降中
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sustainwindow-count-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sustain(window, count) - 持續滿足條件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子中性化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="因子中性化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neutralizefactors-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        neutralize(factors) - 因子中性化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neutralize_industry-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        neutralize_industry() - 產業中性化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他實用函式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其他實用函式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantile_rowq-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quantile_row(q) - 股票當天分位數
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index_str_to_date-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        index_str_to_date() - 索引格式轉換
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groupby_category-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        groupby_category() - 產業分群
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_entry-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_entry() - 取進場點
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_exit-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_exit() - 取出場點
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    歷史回測
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../factor_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    因子分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../order_api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下單(單策略)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../order_api2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    下單(多策略)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machine_learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    機器學習
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../finlab_plot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料視覺化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../optimize_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    策略參數優化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analysis_modules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    策略分析模組
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../market_customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    自訂市場物件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    詳細功能
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    詳細功能
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/finlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/dataframe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.dataframe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/backtest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.backtest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.report
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/machine_learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.ml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/portfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.portfolio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/online/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.online
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/plot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.plot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/optimize/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.optimize
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/market/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    finlab.market
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    完整工作流程
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    完整工作流程
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/complete_strategy_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    從研究到實盤
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/ml_strategy_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    機器學習策略流程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/multi_strategy_portfolio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多策略組合管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/risk_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    風險管理指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    架構與設計
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    架構與設計
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/module_relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模組架構圖
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/data_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    資料流程詳解
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/extending_finlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    擴充開發指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    實用範例
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    實用範例
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台股
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    台股
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/guide_for_beginners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    策略開發10分鐘上手
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/Pandas_%E7%AD%96%E7%95%A5%E9%96%8B%E7%99%BC%E5%9F%BA%E7%A4%8E%E8%AA%9E%E6%B3%95/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pandas 策略開發基礎語法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E8%82%A1%E5%83%B9%E5%89%B5%E6%96%B0%E9%AB%98%E5%8B%95%E8%83%BD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    股價創新高動能
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E6%8A%80%E8%A1%93%E6%8C%87%E6%A8%99%E9%81%B8%E8%82%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    技術指標選股
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E4%B9%96%E9%9B%A2%E7%8E%87%E5%92%8C%E8%B2%A1%E5%A0%B1%E6%BF%BE%E7%B6%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    乖離率和財報濾網
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E6%9C%AC%E7%9B%8A%E6%88%90%E9%95%B7%E6%AF%94/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    本益成長比(月營收截止日換股)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E5%B0%8F%E8%B3%87%E6%97%8F%E5%84%AA%E7%AD%89%E7%94%9F/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    小資族優等生
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E5%A4%9A%E7%A9%BA%E5%B0%8D%E6%B2%96/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    多空對沖
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E7%87%9F%E5%BB%BA%E7%94%A2%E6%A5%AD%E5%B0%88%E7%94%A8%E6%8C%87%E6%A8%99/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    營建產業專用指標
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E9%81%8E%E6%BF%BE%E5%85%A8%E9%A1%8D%E4%BA%A4%E5%89%B2%E8%82%A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    過濾全額交割股
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E9%81%8E%E6%BF%BEKY%E8%82%A1%E8%B2%A1%E5%A0%B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    過濾KY股財報
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/%E5%A4%A7%E7%9B%A4%E6%8C%87%E6%A8%99%E6%BF%BE%E7%B6%B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    大盤指標濾網
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/2330_bband_rebound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    台積電逆勢抄底
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/cheap-stock-ratio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    大跌底部判斷
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/important_info_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    重訊公告搜尋 - 業外損失
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/ml_example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    機器學習範例策略
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../change-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日誌
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常見問題 FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    術語表
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discord.gg/tAr4ysPqvR" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    社群助教
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ai.finlab.tw/pricing" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    價格
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目錄">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速索引
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pandas-dataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        與 Pandas DataFrame 的差異
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finlabdataframe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        創建 FinlabDataFrame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        運算符號
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        選股函式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="選股函式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#averagen-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        average(n) - 移動平均
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_largestn-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_largest(n) - 數值最大股票
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_smallestn-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_smallest(n) - 數值最小股票
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hold_until" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        訊號進出場(hold_until)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="訊號進出場(hold_until)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        進階參數
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完整策略範例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        數值變化趨勢
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="數值變化趨勢">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#risen-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rise(n) - 數值上升中
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#falln-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fall(n) - 數值下降中
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sustainwindow-count-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sustain(window, count) - 持續滿足條件
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        因子中性化
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="因子中性化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neutralizefactors-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        neutralize(factors) - 因子中性化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neutralize_industry-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        neutralize_industry() - 產業中性化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他實用函式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="其他實用函式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantile_rowq-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quantile_row(q) - 股票當天分位數
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#index_str_to_date-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        index_str_to_date() - 索引格式轉換
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groupby_category-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        groupby_category() - 產業分群
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_entry-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_entry() - 取進場點
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is_exit-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        is_exit() - 取出場點
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">計算選股條件</h1>
+<p><code>FinlabDataFrame</code> 是 Finlab 在 Pandas DataFrame 基礎上擴展的選股專用工具，讓您用簡短語法完成複雜的選股策略。如果您不熟悉 Pandas，建議先參考<a href="https://hackmd.io/@wiimax/10-minutes-to-pandas">10分鐘學會Pandas</a>教學。</p>
+<h2 id="_2">快速索引</h2>
+<table>
+<thead>
+<tr>
+<th>類別</th>
+<th>函式</th>
+<th>功能說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>基本運算</strong></td>
+<td><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&amp;</code>, <code>\|</code>, <code>~</code></td>
+<td>算術、比較、邏輯運算</td>
+</tr>
+<tr>
+<td><strong>選股</strong></td>
+<td><code>is_largest(n)</code></td>
+<td>選出數值最大的 n 檔</td>
+</tr>
+<tr>
+<td></td>
+<td><code>is_smallest(n)</code></td>
+<td>選出數值最小的 n 檔</td>
+</tr>
+<tr>
+<td></td>
+<td><code>average(n)</code></td>
+<td>計算 n 期移動平均</td>
+</tr>
+<tr>
+<td><strong>進出場</strong></td>
+<td><code>hold_until(exit)</code></td>
+<td>設定進出場訊號</td>
+</tr>
+<tr>
+<td></td>
+<td><code>is_entry()</code></td>
+<td>提取進場時點</td>
+</tr>
+<tr>
+<td></td>
+<td><code>is_exit()</code></td>
+<td>提取出場時點</td>
+</tr>
+<tr>
+<td><strong>趨勢</strong></td>
+<td><code>rise(n)</code></td>
+<td>是否高於 n 期前</td>
+</tr>
+<tr>
+<td></td>
+<td><code>fall(n)</code></td>
+<td>是否低於 n 期前</td>
+</tr>
+<tr>
+<td></td>
+<td><code>sustain(window, count)</code></td>
+<td>持續滿足條件</td>
+</tr>
+<tr>
+<td><strong>中性化</strong></td>
+<td><code>neutralize(factors)</code></td>
+<td>因子中性化（迴歸殘差）</td>
+</tr>
+<tr>
+<td></td>
+<td><code>neutralize_industry()</code></td>
+<td>產業中性化</td>
+</tr>
+<tr>
+<td><strong>其他</strong></td>
+<td><code>quantile_row(q)</code></td>
+<td>橫向分位數</td>
+</tr>
+<tr>
+<td></td>
+<td><code>groupby_category()</code></td>
+<td>產業分群</td>
+</tr>
+<tr>
+<td></td>
+<td><code>index_str_to_date()</code></td>
+<td>索引格式轉換</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pandas-dataframe">與 Pandas DataFrame 的差異</h2>
+<table>
+<thead>
+<tr>
+<th>差異項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>額外函式</strong></td>
+<td>提供選股專用函式如 <code>is_largest()</code>, <code>sustain()</code>, <code>hold_until()</code> 等</td>
+</tr>
+<tr>
+<td><strong>自動對齊</strong></td>
+<td>運算前自動對齊不同頻率資料（日、月、季），無需手動 <code>reindex</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="finlabdataframe">創建 FinlabDataFrame</h2>
+<p><strong>方法一：使用 finlab.data.get()</strong></p>
+<p>使用 <code>finlab.data.get()</code> 獲得的資料，自動為 <code>FinlabDataFrame</code> 格式。</p>
+<p><strong>方法二：轉換 Pandas DataFrame</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab.dataframe</span><span class="w"> </span><span class="kn">import</span> <span class="n">FinlabDataFrame</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">df_finlab</span> <span class="o">=</span> <span class="n">FinlabDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_3">運算符號</h2>
+<p>與 <code>pd.DataFrame</code> 類似，對相同位置的元素進行運算。支援以下運算符號：</p>
+<table>
+<thead>
+<tr>
+<th>類型</th>
+<th>運算符</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>算術運算</strong></td>
+<td><code>+</code></td>
+<td>相加</td>
+</tr>
+<tr>
+<td></td>
+<td><code>-</code></td>
+<td>相減</td>
+</tr>
+<tr>
+<td></td>
+<td><code>*</code></td>
+<td>相乘</td>
+</tr>
+<tr>
+<td></td>
+<td><code>/</code></td>
+<td>相除</td>
+</tr>
+<tr>
+<td><strong>比較運算</strong></td>
+<td><code>&gt;</code></td>
+<td>大於</td>
+</tr>
+<tr>
+<td></td>
+<td><code>&gt;=</code></td>
+<td>大於等於</td>
+</tr>
+<tr>
+<td></td>
+<td><code>==</code></td>
+<td>等於</td>
+</tr>
+<tr>
+<td></td>
+<td><code>&lt;</code></td>
+<td>小於</td>
+</tr>
+<tr>
+<td></td>
+<td><code>&lt;=</code></td>
+<td>小於等於</td>
+</tr>
+<tr>
+<td><strong>邏輯運算</strong></td>
+<td><code>&amp;</code></td>
+<td>且（AND）</td>
+</tr>
+<tr>
+<td></td>
+<td><code>\|</code></td>
+<td>或（OR）</td>
+</tr>
+<tr>
+<td></td>
+<td><code>~</code></td>
+<td>非（NOT）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>範例：選出收盤價介於 10 ~ 100 的股票</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">close</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># 收盤價位於 10 ~ 100 之間</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">between_10_100</span> <span class="o">=</span> <span class="p">(</span><span class="n">close</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">close</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">)</span>
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">資料頻率自動對齊</p>
+<p>當不同頻率資料（日、月、季）進行運算時，<code>FinlabDataFrame</code> 會自動處理對齊：</p>
+<table>
+<thead>
+<tr>
+<th>對齊步驟</th>
+<th>處理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>日期（index）</strong></td>
+<td>取聯集，缺值以最近數據填補（forward fill）</td>
+</tr>
+<tr>
+<td><strong>股票（column）</strong></td>
+<td>取交集，無對應資料的股票會被剔除</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>範例：結合每日股價與每季財報資料</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># 取得 FinlabDataFrame</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">close</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">roa</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fundamental_features:ROA稅後息前&#39;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># 運算兩個選股條件交集</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">cond1</span> <span class="o">=</span> <span class="n">close</span> <span class="o">&gt;</span> <span class="mi">37</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">cond2</span> <span class="o">=</span> <span class="n">roa</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">cond_1_2</span> <span class="o">=</span> <span class="n">cond1</span> <span class="o">&amp;</span> <span class="n">cond2</span>
+</code></pre></div>
+<p>下圖為 1101 台泥的訊號示意。可以看到即使 <code>cond1</code>（日）與 <code>cond2</code>（季）頻率不同，也能直接運算：</p>
+<p><img src="https://i.ibb.co/m9chXSQ/imageconds.png" alt="imageconds"></p>
+<div class="admonition note">
+<p class="admonition-title">為何合併後的資料行數變少？</p>
+<p>雖然日期取聯集，但實際資料只會保留兩者的<strong>重疊時間區間</strong>。例如：cond1 從 2010 開始，cond2 從 2013 開始，合併後的資料從 2013 開始。</p>
+</div>
+<h2 id="_4">選股函式</h2>
+<h3 id="averagen-">average(n) - 移動平均</h3>
+<p>計算 n 期移動平均值。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">close</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">sma</span> <span class="o">=</span> <span class="n">close</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">cond</span> <span class="o">=</span> <span class="n">close</span> <span class="o">&gt;</span> <span class="n">sma</span>  <span class="c1"># 股價在10日均線之上</span>
+</code></pre></div>
+<p>視覺化檢查：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">close</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2021&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">sma</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2021&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">cond</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2021&#39;</span><span class="p">,</span> <span class="s1">&#39;2330&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="s1">&#39;sma&#39;</span><span class="p">,</span> <span class="s1">&#39;cond&#39;</span><span class="p">])</span>
+</code></pre></div>
+<p><img src="https://i.ibb.co/Mg1P85y/sma.png" alt="sma"></p>
+<h3 id="is_largestn-">is_largest(n) - 數值最大股票</h3>
+<p>篩選每日數值最大的前 n 檔股票。</p>
+<p><img width="400px" src="https://i.ibb.co/8rh3tbt/is-largest.png" alt="is-largest"></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">roa</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fundamental_features:ROA稅後息前&#39;</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">good_stocks</span> <span class="o">=</span> <span class="n">roa</span><span class="o">.</span><span class="n">is_largest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 每日 ROA 前 10 名</span>
+</code></pre></div>
+<p><strong>輸出範例：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">date</th>
+<th style="text-align: right;">000116</th>
+<th style="text-align: right;">000538</th>
+<th style="text-align: right;">000616</th>
+<th style="text-align: right;">000700</th>
+<th style="text-align: right;">000779</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2013-Q1</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">True</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+</tr>
+<tr>
+<td style="text-align: left;">2013-Q2</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">True</td>
+</tr>
+<tr>
+<td style="text-align: left;">2013-Q3</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">True</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+</tr>
+<tr>
+<td style="text-align: left;">2013-Q4</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">True</td>
+<td style="text-align: right;">False</td>
+</tr>
+<tr>
+<td style="text-align: left;">2014-Q1</td>
+<td style="text-align: right;">True</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+<td style="text-align: right;">False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="is_smallestn-">is_smallest(n) - 數值最小股票</h3>
+<p>篩選每日數值最小的前 n 檔股票。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">pb</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price_earning_ratio:股價淨值比&#39;</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">cheap_stocks</span> <span class="o">=</span> <span class="n">pb</span><span class="o">.</span><span class="n">is_smallest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 股價淨值比最小的 10 檔</span>
+</code></pre></div>
+<h2 id="hold_until">訊號進出場(hold_until)</h2>
+<p>最重要的策略語法，用於設定進出場邏輯：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">close</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">buy</span> <span class="o">=</span> <span class="n">close</span> <span class="o">&gt;</span> <span class="n">close</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="n">sell</span> <span class="o">=</span> <span class="n">close</span> <span class="o">&lt;</span> <span class="n">close</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">position</span> <span class="o">=</span> <span class="n">buy</span><span class="o">.</span><span class="n">hold_until</span><span class="p">(</span><span class="n">sell</span><span class="p">)</span>
+</code></pre></div>
+<p>當 <code>buy</code> 訊號為 <code>True</code> 時買入並持有，直到 <code>sell</code> 訊號為 <code>True</code> 時賣出。</p>
+<p><img src="https://i.ibb.co/PCt4hPd/Screen-Shot-2021-10-26-at-6-35-05-AM.png" alt="Screen-Shot-2021-10-26-at-6-35-05-AM"></p>
+<h3 id="_5">進階參數</h3>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>說明</th>
+<th>範例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>stop_loss</strong></td>
+<td>停損比例</td>
+<td><code>buy.hold_until(sell, stop_loss=0.1)</code></td>
+</tr>
+<tr>
+<td><strong>take_profit</strong></td>
+<td>停利比例</td>
+<td><code>buy.hold_until(sell, take_profit=0.2)</code></td>
+</tr>
+<tr>
+<td><strong>nstocks_limit</strong></td>
+<td>最多持有股票數（類股輪動）</td>
+<td><code>buy.hold_until(sell, nstocks_limit=5)</code></td>
+</tr>
+<tr>
+<td><strong>rank</strong></td>
+<td>選股優先順序（正值為由大到小）</td>
+<td><code>buy.hold_until(sell, rank=-pb)</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">完整策略範例</h3>
+<p>價格 &gt; 20 日均線入場，價格 &lt; 60 日均線出場，最多持有 10 檔，以股價淨值比小的股票優先。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab.backtest</span><span class="w"> </span><span class="kn">import</span> <span class="n">sim</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">close</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">pb</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price_earning_ratio:股價淨值比&#39;</span><span class="p">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="n">entries</span> <span class="o">=</span> <span class="n">close</span> <span class="o">&gt;</span> <span class="n">close</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">exits</span> <span class="o">=</span> <span class="n">close</span> <span class="o">&lt;</span> <span class="n">close</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="n">position</span> <span class="o">=</span> <span class="n">entries</span><span class="o">.</span><span class="n">hold_until</span><span class="p">(</span><span class="n">exits</span><span class="p">,</span> <span class="n">nstocks_limit</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">rank</span><span class="o">=-</span><span class="n">pb</span><span class="p">)</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="n">sim</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="_7">數值變化趨勢</h2>
+<h3 id="risen-">rise(n) - 數值上升中</h3>
+<p>判斷當前值是否高於 n 期前的值。</p>
+<p><img src="https://i.ibb.co/Y72bN5v/Screen-Shot-2021-10-26-at-6-43-41-AM.png" alt="Screen-Shot-2021-10-26-at-6-43-41-AM"></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rise</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 是否高於10日前</span>
+</code></pre></div>
+<h3 id="falln-">fall(n) - 數值下降中</h3>
+<p>判斷當前值是否低於 n 期前的值。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fall</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 是否低於10日前</span>
+</code></pre></div>
+<h3 id="sustainwindow-count-">sustain(window, count) - 持續滿足條件</h3>
+<p>判斷在 window 期間內，至少有 count 期滿足條件。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">close</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">close</span><span class="o">.</span><span class="n">rise</span><span class="p">()</span><span class="o">.</span><span class="n">sustain</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>      <span class="c1"># 連續2日上漲</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">close</span><span class="o">.</span><span class="n">rise</span><span class="p">()</span><span class="o">.</span><span class="n">sustain</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>   <span class="c1"># 3日中有2日上漲</span>
+</code></pre></div>
+<h2 id="_8">因子中性化</h2>
+<p>在多因子選股中，因子之間可能存在相關性。例如小型股通常本益比較低，因此「低本益比」因子可能只是在選小型股。中性化透過橫截面迴歸，移除指定因子的影響，留下純粹的 alpha 訊號。</p>
+<h3 id="neutralizefactors-">neutralize(factors) - 因子中性化</h3>
+<p>對指定因子做橫截面迴歸，回傳殘差（去除該因子影響後的值）。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">factor</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price_earning_ratio:本益比&#39;</span><span class="p">)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">size</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;etl:market_value&#39;</span><span class="p">)</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># 去除市值影響</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="n">neutralized</span> <span class="o">=</span> <span class="n">factor</span><span class="o">.</span><span class="n">neutralize</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+</code></pre></div>
+<p>支援同時中性化多個因子：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">beta</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fundamental_features:Beta&#39;</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># 用 list 傳入多個因子</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">neutralized</span> <span class="o">=</span> <span class="n">factor</span><span class="o">.</span><span class="n">neutralize</span><span class="p">([</span><span class="n">size</span><span class="p">,</span> <span class="n">beta</span><span class="p">])</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="c1"># 或用 dict 命名（方便除錯）</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="n">neutralized</span> <span class="o">=</span> <span class="n">factor</span><span class="o">.</span><span class="n">neutralize</span><span class="p">({</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    <span class="s1">&#39;size2&#39;</span><span class="p">:</span> <span class="n">size</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>    <span class="s1">&#39;beta&#39;</span><span class="p">:</span> <span class="n">beta</span><span class="p">,</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="p">})</span>
+</code></pre></div>
+<h3 id="neutralize_industry-">neutralize_industry() - 產業中性化</h3>
+<p>以產業別虛擬變數做橫截面迴歸，回傳殘差。自動使用 <code>security_categories</code> 的產業分類。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">factor</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price_earning_ratio:本益比&#39;</span><span class="p">)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># 去除產業效應</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">neutralized</span> <span class="o">=</span> <span class="n">factor</span><span class="o">.</span><span class="n">neutralize_industry</span><span class="p">()</span>
+</code></pre></div>
+<p>也可自訂產業分類：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">custom_cats</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="s1">&#39;stock_id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span> <span class="s1">&#39;2317&#39;</span><span class="p">,</span> <span class="s1">&#39;1101&#39;</span><span class="p">],</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;半導體&#39;</span><span class="p">,</span> <span class="s1">&#39;電子&#39;</span><span class="p">,</span> <span class="s1">&#39;水泥&#39;</span><span class="p">]</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="p">})</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="n">neutralized</span> <span class="o">=</span> <span class="n">factor</span><span class="o">.</span><span class="n">neutralize_industry</span><span class="p">(</span><span class="n">categories</span><span class="o">=</span><span class="n">custom_cats</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>中性化後的因子可以直接用於 <code>rank()</code>、<code>is_largest()</code> 等選股函式，篩選出的股票更能反映因子本身的效果，而非被市值或產業所主導。</p>
+</div>
+<h2 id="_9">其他實用函式</h2>
+<h3 id="quantile_rowq-">quantile_row(q) - 股票當天分位數</h3>
+<p>取得每日橫向的分位數值。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">quantile_row</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span>  <span class="c1"># 每日股價前90%分位數</span>
+</code></pre></div>
+<h3 id="index_str_to_date-">index_str_to_date() - 索引格式轉換</h3>
+<p>將月季報索引從字串轉為公告截止日。</p>
+<table>
+<thead>
+<tr>
+<th>轉換前</th>
+<th>轉換後</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022-M1（月營收）</td>
+<td>2022-01-10</td>
+</tr>
+<tr>
+<td>2022-Q1（財務季報）</td>
+<td>2022-05-15</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;monthly_revenue:當月營收&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">index_str_to_date</span><span class="p">()</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;financial_statement:現金及約當現金&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">index_str_to_date</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="groupby_category-">groupby_category() - 產業分群</h3>
+<p>按產業別分群資料，類似 <code>pd.DataFrame.groupby()</code>。</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">pe</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price_earning_ratio:股價淨值比&#39;</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">pe</span><span class="o">.</span><span class="n">groupby_category</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s1">&#39;半導體&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  <span class="c1"># 半導體平均股價淨值比</span>
+</code></pre></div>
+<img src="https://i.ibb.co/Tq2fKBp/pbmean.png" alt="pbmean"></p>
+<h3 id="is_entry-">is_entry() - 取進場點</h3>
+<p>從持倉訊號中提取進場時點。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="n">position</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_largest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="n">entry_signals</span> <span class="o">=</span> <span class="n">position</span><span class="o">.</span><span class="n">is_entry</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="is_exit-">is_exit() - 取出場點</h3>
+<p>從持倉訊號中提取出場時點。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">finlab</span><span class="w"> </span><span class="kn">import</span> <span class="n">data</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">position</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;price:收盤價&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">is_largest</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="n">exit_signals</span> <span class="o">=</span> <span class="n">position</span><span class="o">.</span><span class="n">is_exit</span><span class="p">()</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到頂端
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
