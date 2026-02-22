@@ -1,0 +1,67 @@
+/* ============================================
+   Minimal Theme - Black Header Only
+   ============================================ */
+
+/* Black Header */
+.md-header {
+  background-color: #000000;
+  border-bottom: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.md-header__title {
+  color: #FFFFFF;
+}
+
+.md-header__button {
+  color: #FFFFFF;
+}
+
+.md-header__topic {
+  color: #FFFFFF;
+}
+
+/* Header Search */
+.md-header .md-search__input {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+}
+
+.md-header .md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Repo icon in header */
+.md-header .md-source {
+  color: #FFFFFF;
+}
+
+/* Black Navigation Tabs */
+.md-tabs {
+  background-color: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.md-tabs__link:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.md-tabs__link--active {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Fix inherited color for active tab item */
+.md-tabs__item--active .md-tabs__link {
+  color: #FFFFFF !important;
+}
+
+/* Jupyter Notebook Tables */
+.jupyter-wrapper table.dataframe {
+  table-layout: auto !important;
+}
