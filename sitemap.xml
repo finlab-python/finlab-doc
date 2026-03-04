@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://doc.finlab.tw/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/change-log/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/change-log/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/change-log/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/cli/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/cli/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/cli/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/faq/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/faq/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/getting-started/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/getting-started/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/glossary/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/glossary/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/glossary/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/learning_ref/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/learning_ref/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/learning_ref/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/roadmap/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/roadmap/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/architecture/data_flow/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/architecture/data_flow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/architecture/data_flow/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/architecture/extending_finlab/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/architecture/extending_finlab/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/architecture/extending_finlab/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/architecture/module_relationships/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/architecture/module_relationships/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/architecture/module_relationships/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/analysis_modules/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/analysis_modules/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/analysis_modules/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/backtest/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/backtest/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/backtest/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/backtest_decorator/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/backtest_decorator/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/backtest_decorator/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/document/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/document/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/document/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/factor_analysis/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/factor_analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/factor_analysis/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/finlab_plot/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/finlab_plot/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/finlab_plot/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/get_data/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/get_data/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/get_data/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/machine_learning/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/machine_learning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/machine_learning/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/market_customization/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/market_customization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/market_customization/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/optimize_strategy/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/optimize_strategy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/optimize_strategy/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/order_api/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/order_api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/order_api/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/order_api2/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/order_api2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/order_api2/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/strategy_dashboard/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/strategy_dashboard/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/strategy_dashboard/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/details/tech_ind/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/tech_ind/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/tech_ind/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/analysis/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/analysis/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/backtest/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/backtest/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/backtest/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/data/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/data/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/data/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/dataframe/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/dataframe/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/dataframe/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/finlab/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/finlab/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/finlab/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/machine_learning/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/machine_learning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/machine_learning/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/market/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/market/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/market/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/online/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/online/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/online/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/optimize/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/optimize/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/optimize/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/plot/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/plot/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/plot/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/portfolio/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/portfolio/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/portfolio/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/report/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/report/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/report/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/reference/tools/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/tools/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/cheap-stock-ratio/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/cheap-stock-ratio/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/cheap-stock-ratio/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/construction_sector/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/construction_sector/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/construction_sector/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/deviation_rate_roe_filter/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/deviation_rate_roe_filter/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/deviation_rate_roe_filter/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/factor_crowding_analysis/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/factor_crowding_analysis/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/factor_crowding_analysis/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/full_settlement_filter/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/full_settlement_filter/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/full_settlement_filter/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/guide_for_beginners/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/guide_for_beginners/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/guide_for_beginners/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/important_info_search/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/important_info_search/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/important_info_search/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/ky_stock_filter/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/ky_stock_filter/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/ky_stock_filter/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/long_short_hedge/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/long_short_hedge/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/long_short_hedge/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/market_index_filter/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/market_index_filter/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/market_index_filter/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/ml_example/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/ml_example/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/ml_example/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/pandas_strategy_basics/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/pandas_strategy_basics/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/pandas_strategy_basics/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/peg_ratio_strategy/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/peg_ratio_strategy/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/peg_ratio_strategy/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/price_momentum_new_highs/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/price_momentum_new_highs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/price_momentum_new_highs/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/quality_small_cap/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/quality_small_cap/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/quality_small_cap/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/technical_indicator_selection/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/technical_indicator_selection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/technical_indicator_selection/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/tools/tsmc_bollinger_rebound/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/tsmc_bollinger_rebound/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/tsmc_bollinger_rebound/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/workflows/complete_strategy_workflow/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/workflows/complete_strategy_workflow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/workflows/complete_strategy_workflow/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/workflows/ml_strategy_workflow/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/workflows/ml_strategy_workflow/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/workflows/ml_strategy_workflow/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/workflows/multi_strategy_portfolio/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/workflows/multi_strategy_portfolio/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/workflows/multi_strategy_portfolio/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/workflows/risk_management/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/workflows/risk_management/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/workflows/risk_management/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/change-log/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/change-log/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/change-log/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/cli/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/cli/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/cli/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/faq/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/faq/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/faq/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/getting-started/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/getting-started/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/glossary/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/glossary/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/glossary/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/learning_ref/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/learning_ref/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/learning_ref/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/roadmap/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/roadmap/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/architecture/data_flow/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/architecture/data_flow/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/architecture/data_flow/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/architecture/extending_finlab/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/architecture/extending_finlab/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/architecture/extending_finlab/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/architecture/module_relationships/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/architecture/module_relationships/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/architecture/module_relationships/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/analysis_modules/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/analysis_modules/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/analysis_modules/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/backtest/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/backtest/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/backtest/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/backtest_decorator/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/backtest_decorator/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/backtest_decorator/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/document/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/document/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/document/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/factor_analysis/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/factor_analysis/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/factor_analysis/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/finlab_plot/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/finlab_plot/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/finlab_plot/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/get_data/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/get_data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/get_data/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/machine_learning/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/machine_learning/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/machine_learning/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/market_customization/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/market_customization/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/market_customization/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/optimize_strategy/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/optimize_strategy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/optimize_strategy/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/order_api/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/order_api/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/order_api/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/order_api2/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/order_api2/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/order_api2/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/strategy_dashboard/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/strategy_dashboard/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/strategy_dashboard/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/details/tech_ind/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/details/tech_ind/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/details/tech_ind/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/analysis/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/analysis/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/analysis/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/backtest/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/backtest/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/backtest/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/data/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/data/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/data/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/dataframe/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/dataframe/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/dataframe/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/finlab/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/finlab/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/finlab/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/machine_learning/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/machine_learning/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/machine_learning/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/market/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/market/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/market/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/online/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/online/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/online/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/optimize/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/optimize/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/optimize/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/plot/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/plot/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/plot/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/portfolio/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/portfolio/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/portfolio/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/report/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/report/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/report/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/reference/tools/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/reference/tools/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/reference/tools/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/cheap-stock-ratio/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/cheap-stock-ratio/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/cheap-stock-ratio/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/construction_sector/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/construction_sector/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/construction_sector/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/deviation_rate_roe_filter/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/deviation_rate_roe_filter/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/deviation_rate_roe_filter/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/factor_crowding_analysis/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/factor_crowding_analysis/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/factor_crowding_analysis/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/full_settlement_filter/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/full_settlement_filter/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/full_settlement_filter/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/guide_for_beginners/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/guide_for_beginners/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/guide_for_beginners/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/important_info_search/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/important_info_search/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/important_info_search/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/ky_stock_filter/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/ky_stock_filter/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/ky_stock_filter/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/long_short_hedge/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/long_short_hedge/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/long_short_hedge/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/market_index_filter/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/market_index_filter/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/market_index_filter/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/ml_example/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/ml_example/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/ml_example/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/pandas_strategy_basics/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/pandas_strategy_basics/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/pandas_strategy_basics/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/peg_ratio_strategy/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/peg_ratio_strategy/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/peg_ratio_strategy/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/price_momentum_new_highs/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/price_momentum_new_highs/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/price_momentum_new_highs/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/quality_small_cap/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/quality_small_cap/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/quality_small_cap/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/technical_indicator_selection/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/technical_indicator_selection/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/technical_indicator_selection/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/tools/tsmc_bollinger_rebound/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/tools/tsmc_bollinger_rebound/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/tools/tsmc_bollinger_rebound/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/workflows/complete_strategy_workflow/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/workflows/complete_strategy_workflow/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/workflows/complete_strategy_workflow/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/workflows/ml_strategy_workflow/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/workflows/ml_strategy_workflow/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/workflows/ml_strategy_workflow/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/workflows/multi_strategy_portfolio/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/workflows/multi_strategy_portfolio/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/workflows/multi_strategy_portfolio/"/>
+    </url>
+    <url>
+        <loc>https://doc.finlab.tw/en/workflows/risk_management/</loc>
+        <lastmod>2026-03-04</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://doc.finlab.tw/en/workflows/risk_management/"/>
+        <xhtml:link rel="alternate" hreflang="zh-TW" href="https://doc.finlab.tw/workflows/risk_management/"/>
+    </url>
+</urlset>
