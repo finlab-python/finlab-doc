@@ -1,0 +1,11 @@
+:root > * {
+  --md-primary-fg-color: #252786
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #5668cc
+}
+
+.jupyter-wrapper table.dataframe {
+    table-layout: auto !important;
+`}
